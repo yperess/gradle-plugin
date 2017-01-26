@@ -1,0 +1,18 @@
+buildscript {
+    repositories {
+        maven {
+            url uri('../repo')
+        }
+    }
+    dependencies {
+        classpath group: 'com.sample',
+                name: 'PearPlugin',
+                version: '1.0-SNAPSHOT'
+    }
+}
+
+apply plugin: 'com.sample.pear'
+
+pear {
+    srcDir new File("$projectDir/src/main/webapp")
+}
